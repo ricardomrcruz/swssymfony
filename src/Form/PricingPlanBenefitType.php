@@ -13,7 +13,7 @@ class PricingPlanBenefitType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('pricingPlan')
+            
         ;
     }
 

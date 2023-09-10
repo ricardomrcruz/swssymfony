@@ -22,7 +22,7 @@ class PricingPlan
     #[ORM\Column]
     private ?int $price = null;
 
-    #[ORM\OneToMany(mappedBy: 'pricingPlan', targetEntity: PricingPlanBenefit::class)]
+    #[ORM\OneToMany(mappedBy: 'pricingPlan', cascade:['persist'], orphanRemoval:true,  targetEntity: PricingPlanBenefit::class) ]
     private Collection $benefit;
 
     #[ORM\ManyToMany(targetEntity: PricingPlanFeature::class)]

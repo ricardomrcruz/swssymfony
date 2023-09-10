@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\PricingPlan;
+use App\Form\PricingPlanBenefitType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
@@ -22,7 +23,7 @@ class PricingPlanCrudController extends AbstractCrudController
             TextField::new('name'),
             IntegerField::new('price'),
             CollectionField::new('benefits')
-                ->setFormType()
+                ->setEntryType(PricingPlanBenefitType::class)
                 ->onlyOnForms()
         ];
     }
